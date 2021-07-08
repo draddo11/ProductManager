@@ -36,17 +36,17 @@ public class AppController {
         return "redirect:/";
 
    }
-//    @RequestMapping("/edit/{id}")
-//    public ModelAndView showEditProductForm(@PathVariable(name = "id") Long id) {
-//       ModelAndView mav = new ModelAndView("edit_product");
-//       Product product = productService.get(id);
-//       mav.addObject("product", product);
-//       return mav;
-//    }
-//   @RequestMapping("/delete/{id}")
-//    public  String deleteProduct(@PathVariable(name = "id") Long id){
-//       productService.delete(id);
-//       return "redirect:/";
-//   }
+    @RequestMapping("/edit/{id}")
+    public ModelAndView showEditProductForm(@PathVariable(name = "id") Long id) {
+       ModelAndView mav = new ModelAndView("edit_product");
+       Product product = productService.get(id);
+       mav.addObject("product", product);
+       return mav;
+    }
+   @RequestMapping("/delete/{id}")
+    public  String deleteProduct(@PathVariable(name = "id") Long id){
+       productService.delete(id);
+       return "redirect:/";
+   }
 
 }
